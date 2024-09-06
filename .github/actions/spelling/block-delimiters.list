@@ -1,0 +1,43 @@
+# Public Keys
+-----BEGIN PUBLIC KEY-----
+-----END PUBLIC KEY-----
+
+# RSA Private Key
+-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+
+# GPG Public Key
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+-----END PGP PUBLIC KEY BLOCK-----
+
+# GPG Signature
+-----BEGIN PGP SIGNATURE-----
+-----END PGP SIGNATURE-----
+
+# Certificates
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+
+# tests
+WEE_CHECK_EVAL(
+);
+
+# tests
+WEE_TEST_STR(
+);
+
+# tests
+LONGS_EQUAL(
+);
+
+# tests
+STRCMP_EQUAL(
+);
+
+# doc/en/weechat_relay_api.en.adoc
+result hash is the SHA256 of string
+The header
+
+# zend_parse_parameters
+zend_parse_parameters (
+==
