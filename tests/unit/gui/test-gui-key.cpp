@@ -290,7 +290,7 @@ TEST(GuiKey, Expand)
     WEE_CHECK_EXP_KEY(1, "meta-meta-meta-z", "meta-meta-meta-z", "\001[\001[\001[z");
     WEE_CHECK_EXP_KEY(1, "meta-meta-meta-_", "meta-meta-meta-_", "\001[\001[\001[_");
 
-    /* sihft-tab */
+    /* shift-tab */
     WEE_CHECK_EXP_KEY(1, "meta-[Z", "shift-tab", "\001[[Z");
 
     /* arrows */
@@ -975,7 +975,7 @@ TEST(GuiKey, IsSafe)
     LONGS_EQUAL(0, gui_key_is_safe (GUI_KEY_CONTEXT_DEFAULT, "comma"));
     LONGS_EQUAL(0, gui_key_is_safe (GUI_KEY_CONTEXT_DEFAULT, "space"));
 
-    /* NOT safe: starts with capital letter (keys are case sensitive) */
+    /* NOT safe: starts with capital letter (keys are case-sensitive) */
     LONGS_EQUAL(0, gui_key_is_safe (GUI_KEY_CONTEXT_DEFAULT, "Ctrl-a"));
     LONGS_EQUAL(0, gui_key_is_safe (GUI_KEY_CONTEXT_DEFAULT, "Meta-a"));
     LONGS_EQUAL(0, gui_key_is_safe (GUI_KEY_CONTEXT_DEFAULT, "Shift-home"));

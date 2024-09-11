@@ -946,8 +946,8 @@ Bar _input_ has following default items:
 There are two search modes:
 
 * search in lines, for example `[Search lines (~ str,msg)]`, with the following info:
-** `~`: case insensitive
-** `==`: case sensitive
+** `~`: case-insensitive
+** `==`: case-sensitive
 ** `str`: search string
 ** `regex`: search regular expression
 ** `msg`: search in messages
@@ -955,8 +955,8 @@ There are two search modes:
 ** `pre\|msg`: search in prefixes and messages.
 * search in commands history, for example `[Search command (~ str,local)]`,
   with the following info:
-** `~`: case insensitive
-** `==`: case sensitive
+** `~`: case-insensitive
+** `==`: case-sensitive
 ** `str`: search string
 ** `regex`: search regular expression
 ** `local`: search in buffer local history
@@ -1101,7 +1101,7 @@ data).
 
 Examples of buffers:
 
-* core buffer (created by WeeChat on startup, can not be closed)
+* core buffer (created by WeeChat on startup, cannot be closed)
 * irc server (displays messages from server)
 * irc channel
 * irc private messages
@@ -1339,7 +1339,7 @@ Tags commonly used (non-exhaustive list):
 [width="100%",cols="1m,4",options="header"]
 |===
 | Tag              | Description
-| no_filter        | Line can not be filtered.
+| no_filter        | Line cannot be filtered.
 | no_highlight     | No highlight is possible on line.
 | no_log           | Line is not written in log file.
 | log0 … log9      | Level of log for line (see the <<command_logger_logger,/logger>> command).
@@ -1966,9 +1966,9 @@ These keys and actions are used on the IRC /list buffer (see command <<command_i
 | kbd:[F11]      | `pass:[<]`   | Scroll horizontally on the left. | `+/list -left+`
 | kbd:[F12]      | `pass:[>]`   | Scroll horizontally on the right. | `+/list -right+`
 | kbd:[Ctrl+j]   | `j`          | Join IRC channel on selected line. | `+/list -join+`
-|                | `xxx`        | Show only channels with "xxx" in name or topic (case insensitive). |
-|                | `n:xxx`      | Show only channels with "xxx" in name (case insensitive). |
-|                | `t:xxx`      | Show only channels with "xxx" in topic (case insensitive). |
+|                | `xxx`        | Show only channels with "xxx" in name or topic (case-insensitive). |
+|                | `n:xxx`      | Show only channels with "xxx" in name (case-insensitive). |
+|                | `t:xxx`      | Show only channels with "xxx" in topic (case-insensitive). |
 |                | `u:n`        | Show only channels with at least "n" users. |
 |                | `u:>n`       | Show only channels with more than "n" users. |
 |                | `u:<n`       | Show only channels with less than "n" users. |
@@ -3277,7 +3277,7 @@ Alias plugin lets you create alias for commands (from WeeChat or other
 plugins).
 
 Some aliases are created by default, with name in upper case (to make them
-different from standard commands); commands are not case sensitive in WeeChat,
+different from standard commands); commands are not case-sensitive in WeeChat,
 so for example `/close` runs the alias `/CLOSE`.
 
 List of default aliases:
@@ -3400,7 +3400,7 @@ By default no servers are defined. You can add as many servers as you want with
 the <<command_irc_server,/server>> command.
 
 For example to connect to https://libera.chat/[libera.chat ^↗^^]
-with TLS (encrypted trafic):
+with TLS (encrypted traffic):
 
 ----
 /server add libera irc.libera.chat/6697 -tls
@@ -3612,7 +3612,7 @@ Options in servers are:
 [[irc_sasl_ecdsa_nist256p_challenge]]
 ===== SASL ECDSA-NIST256P-CHALLENGE
 
-You must generate a private key in order to authentify with the
+You must generate a private key in order to authenticate with the
 ECDSA-NIST256P-CHALLENGE mechanism (no password is required on connection).
 
 You can generate the key with this command:
@@ -4972,7 +4972,7 @@ A trigger has the following options (names are
 
 | enabled | `on`, `off`
 | When option is `off`, the trigger is disabled and actions are not executed
-  any more.
+  anymore.
 
 | hook | `+signal+`, `+hsignal+`, `+modifier+`, `+line+`, `+print+`, `+command+`,
   `+command_run+`, `+timer+`, `+config+`, `+focus+`, `+info+`, `+info_hashtable+`

@@ -142,13 +142,13 @@ You can add this key with this command:
 Custom bar items must now have a different name than default bar items
 (for example the custom bar item name `time` is now forbidden).\
 If you have such names in your config, WeeChat will now fail to load them
-(this should not happen anyway, since such bar items can not be properly used
+(this should not happen anyway, since such bar items cannot be properly used
 or can cause a crash of WeeChat).
 
 ### Nick color infos
 
 The infos irc_nick_color and irc_nick_color_name are deprecated again, and the
-algorithm to compute IRC nick colors has been reverted to case sensitive.\
+algorithm to compute IRC nick colors has been reverted to case-sensitive.\
 The server name has been removed from arguments.
 
 ## Version 4.1.1
@@ -158,7 +158,7 @@ The server name has been removed from arguments.
 Custom bar items must now have a different name than default bar items
 (for example the custom bar item name `time` is now forbidden).\
 If you have such names in your config, WeeChat will now fail to load them
-(this should not happen anyway, since such bar items can not be properly used
+(this should not happen anyway, since such bar items cannot be properly used
 or can cause a crash of WeeChat).
 
 ## Version 4.1.0
@@ -219,8 +219,8 @@ version 1.5 are now used again, with a change in parameter: the server is now
 optional before the nick: "server,nick".\
 The nick is first converted to lower case, following the value of CASEMAPPING
 on the server, then hashed to compute the color.\
-That means the color for a nick is now case insensitive (in the way IRC servers
-are case insensitive, so with a limited range of chars only).
+That means the color for a nick is now case-insensitive (in the way IRC servers
+are case-insensitive, so with a limited range of chars only).
 
 If a script was using this info with a comma in nickname (which should not happen
 anyway), this is now interpreted as the server name, and the script must be
@@ -272,7 +272,7 @@ Custom bar items must now have a different name than default bar items
 (for example the custom bar item name `time` is now forbidden).
 
 If you have such names in your config, WeeChat will now fail to load them
-(this should not happen anyway, since such bar items can not be properly used
+(this should not happen anyway, since such bar items cannot be properly used
 and can cause a crash of WeeChat).
 
 ## Version 4.0.1
@@ -282,7 +282,7 @@ and can cause a crash of WeeChat).
 The functions [config_set_plugin](https://weechat.org/doc/weechat/plugin/#_config_set_plugin)
 and [config_set_desc_plugin](https://weechat.org/doc/weechat/plugin/#_config_set_desc_plugin)
 are not converting any more the option name to lower case because since version 4.0.0,
-the name of options is case sensitive.
+the name of options is case-sensitive.
 
 ### Grab raw key and command
 
@@ -342,7 +342,7 @@ automatically upgraded to a new version:
 > Because of this new format, you must **NOT** load the new configuration
 files in any older WeeChat version < 4.0.0 once you have run any version ≥ 4.0.0
 at least one time.\
-For example the new key names make the input completely broken (you can not
+For example the new key names make the input completely broken (you cannot
 enter most chars in input any more and Enter key does not work).
 
 ### Key bindings improvements
@@ -374,7 +374,7 @@ The keys in weechat.conf are automatically converted from legacy format on first
 run or upgrade with a legacy configuration file.
 
 For keys bound in external plugins or scripts, WeeChat tries to convert them
-on-the-fly to stay compatible, but this can not work in all cases (this is a
+on-the-fly to stay compatible, but this cannot work in all cases (this is a
 breaking change).
 
 The following fixes are done on keys when they are defined:
@@ -429,7 +429,7 @@ keys were not working at all.
 
 ### Case sensitive identifiers
 
-Many identifiers are made case sensitive, including among others:
+Many identifiers are made case-sensitive, including among others:
 
 - configuration files, sections, options
 - commands, aliases
@@ -561,7 +561,7 @@ cmake .. -DENABLE_PHP=OFF -DENABLE_DOC=ON -DENABLE_DOC_INCOMPLETE=ON
 #### Tarballs
 
 The command `make dist` now builds only `.gz` and `.xz` compressed tarballs.\
-Formats `.bz2` and `.zst` are not built any more.
+Formats `.bz2` and `.zst` are not built anymore.
 
 #### RPM packaging
 
@@ -641,7 +641,7 @@ compared UTF-8 char in string2 from the last compared UTF-8 char in string1:
 
 In addition, the case conversion has been extended, now in addition to range
 A-Z, all chars that have a lower case version are handled.\
-That means for example the case insensitive comparison of "é" and "É" is 0
+That means for example the case-insensitive comparison of "é" and "É" is 0
 (chars are considered equal).
 
 Example with WeeChat 3.8:
@@ -693,7 +693,7 @@ _WeeChat User's guide_.
 ### Remove Python 2 support
 
 The CMake option `ENABLE_PYTHON2` and autotools option `--enable-python2`
-have been removed, and WeeChat can not be compiled with Python 2.x any more.
+have been removed, and WeeChat cannot be compiled with Python 2.x anymore.
 
 ### Callbacks of function config_new_option
 
@@ -1461,7 +1461,7 @@ now displayed on any missing dependency, if the optional feature was enabled
 (most features are automatically enabled, except documentation, man page and
 tests).
 
-Any error on a missing dependency is fatal, so WeeChat can not be compiled.
+Any error on a missing dependency is fatal, so WeeChat cannot be compiled.
 This is a new behavior compared to old versions, where any missing dependency
 was silently ignored and the compilation was possible anyway.
 
@@ -1856,7 +1856,7 @@ sudo apt-get install weechat-devel-python weechat-devel-perl
 
 ### Evaluation in buflist
 
-The evaluation of expressions in buflist options is not recursive any more,
+The evaluation of expressions in buflist options is not recursive anymore,
 to prevent too many evaluations, for example in buffer variables
 (see issue [#1060](https://github.com/weechat/weechat/issues/1060) for more information).\
 If you are using custom variables/options containing evaluated expressions,
@@ -2287,7 +2287,7 @@ You can rebind the key `Alt`+`j`, `Alt`+`l` (`L`):
 ```
 
 Note: the command `/input jump_last_buffer` still works for compatibility reasons,
-but it should not be used any more.
+but it should not be used anymore.
 
 Similarly, a new key has been added to jump to first buffer: `Alt`+`j`, `Alt`+`f`.
 You can add it with the following command:
@@ -2356,7 +2356,7 @@ if int(highlight):
 
 The color code for "reverse video" in IRC message has been fixed: now WeeChat
 uses 0x16 like other clients (and not 0x12 any more).\
-The code 0x12 is not decoded any more, so if it is received (for example from
+The code 0x12 is not decoded anymore, so if it is received (for example from
 an old WeeChat version), it is not displayed as reverse video.
 
 The color code for "underlined text" in input line has been fixed: now WeeChat
@@ -2435,7 +2435,7 @@ You should check the value of both options and fix them if needed.
 ### Day change message
 
 The day change message is now dynamically displayed, and therefore is not stored
-as a line in buffer any more.
+as a line in buffer anymore.
 
 Option weechat.look.day_change_time_format has been split into two options
 weechat.look.day_change_message_{1date|2dates} (color codes are allowed in
@@ -2525,7 +2525,7 @@ creating this link on make install).
 
 ### Man page / documentation
 
-Documentation is not built by default any more, you have to use option
+Documentation is not built by default anymore, you have to use option
 `-DENABLE_DOC=ON` in cmake command to enable it.
 
 The man page is now built with asciidoc and translated in several
@@ -2815,8 +2815,8 @@ Extended regex is used in filters and irc ignore, so some chars that needed
 escape in past do not need any more (for example `[0-9]\+` becomes `[0-9]+`),
 filters and ignore have to be manually fixed.
 
-Option weechat.look.highlight_regex becomes case insensitive by default, to
-make it case sensitive, use "(?-i)" at beginning of string, for example:
+Option weechat.look.highlight_regex becomes case-insensitive by default, to
+make it case-sensitive, use "(?-i)" at beginning of string, for example:
 "(?-i)FlashCode|flashy".
 
 ## Version 0.3.6

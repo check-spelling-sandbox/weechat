@@ -320,7 +320,7 @@ script_command_init ()
     weechat_hook_command (
         "script",
         N_("WeeChat script manager"),
-        /* TRANSLATORS: only text between angle brackets (eg: "<name>") must be translated */
+        /* TRANSLATORS: only text between angle brackets (eg: "<name>") should be translated */
         N_("enable"
            " || list [-o|-ol|-i|-il]"
            " || search <text>"
@@ -380,7 +380,7 @@ script_command_init ()
             N_("  `N`: obsolete (new version available)"),
             "",
             N_("In output of /script list, this additional status can be displayed:"),
-            N_("  `?`: unknown script (can not be downloaded/updated)"),
+            N_("  `?`: unknown script (cannot be downloaded/updated)"),
             "",
             N_("In input of script buffer, word(s) are used to filter scripts "
                "on description, tags, ...). The input \"*\" removes the filter."),

@@ -788,7 +788,7 @@ hook_command_similar_get_relevance (const char *cmd1, int length_cmd1,
     }
     else
     {
-        /* malus if no chars in common between two words */
+        /* down-rank if no chars in common between two words */
         if (string_get_common_bytes_count (cmd1, cmd2) == 0)
             relevance *= 2;
     }
@@ -942,7 +942,7 @@ hook_command_display_error_unknown (const char *command)
         NULL,
         0, GUI_FILTER_TAG_NO_FILTER,
         (found_diff_case_only > 0) ?
-        _("%sUnknown command \"%s\" (commands are case sensitive, "
+        _("%sUnknown command \"%s\" (commands are case-sensitive, "
           "type /help for help), "
           "commands with similar name: %s") :
         _("%sUnknown command \"%s\" (type /help for help), "

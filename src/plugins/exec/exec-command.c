@@ -138,7 +138,7 @@ exec_command_list ()
 
 /*
  * Searches a running command by id, and displays an error if command is not
- * found or not running any more.
+ * found or not running anymore.
  *
  * Returns the command found, or NULL if not found or not running.
  */
@@ -827,7 +827,7 @@ exec_command_init ()
     weechat_hook_command (
         "exec",
         N_("execute external commands"),
-        /* TRANSLATORS: only text between angle brackets (eg: "<name>") must be translated */
+        /* TRANSLATORS: only text between angle brackets (eg: "<name>") should be translated */
         N_("-list"
            " || [-sh|-nosh] [-bg|-nobg] [-stdin|-nostdin] [-buffer <name>] "
            "[-l|-o|-oc|-n|-nf] [-oerr] [-cl|-nocl] [-sw|-nosw] [-ln|-noln] "

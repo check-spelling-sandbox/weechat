@@ -1084,7 +1084,7 @@ Arguments:
 * _string1_: first string for comparison
 * _string2_: second string for comparison
 * _chars_ignored_: string with chars to ignored
-* _case_sensitive_: 1 for case sensitive comparison, otherwise 0
+* _case_sensitive_: 1 for case-sensitive comparison, otherwise 0
 
 [NOTE]
 Behavior has changed in version 3.8 when _case_sensitive_ is set to 0: now all
@@ -1094,7 +1094,7 @@ uppercase letters are properly converted to lowercase (by calling function
 Return value:
 
 * arithmetic result of subtracting the last compared UTF-8 char in
-  _string2_ (converted to lowercase if _case_sentitive_ is set to 0) from the last
+  _string2_ (converted to lowercase if _case_sensitive_ is set to 0) from the last
   compared UTF-8 char in _string1_ (converted to lowercase if _case_sensitive_ is
   set to 0):
 ** < 0 if string1 < string2
@@ -1210,7 +1210,7 @@ Arguments:
 * _string_: string
 * _mask_: mask with wildcards (`+*+`), each wildcard matches 0 or more chars in
   the string
-* _case_sensitive_: 1 for case sensitive comparison, otherwise 0
+* _case_sensitive_: 1 for case-sensitive comparison, otherwise 0
 
 [NOTE]
 Since version 1.0, wildcards are allowed inside the mask
@@ -1272,7 +1272,7 @@ Arguments:
 * _string_: string
 * _masks_: list of masks, with a NULL after the last mask in list; each mask
   is compared to the string with the function <<_string_match,string_match>>
-* _case_sensitive_: 1 for case sensitive comparison, otherwise 0
+* _case_sensitive_: 1 for case-sensitive comparison, otherwise 0
 
 [NOTE]
 Behavior has changed in version 3.8 when _case_sensitive_ is set to 0: now all
@@ -1598,7 +1598,7 @@ Flags must be at beginning of regular expression. Format is:
 Allowed flags are:
 
 * _e_: POSIX extended regular expression (_REG_EXTENDED_)
-* _i_: case insensitive (_REG_ICASE_)
+* _i_: case-insensitive (_REG_ICASE_)
 * _n_: match-any-character operators don't match a newline (_REG_NEWLINE_)
 * _s_: support for substring addressing of matches is not required (_REG_NOSUB_)
 
@@ -2791,7 +2791,7 @@ from first used to last):
   == `+1+`
 
 | `+==*+` | 2.9
-| Is matching mask where "*" is allowed, case sensitive (see function <<_string_match,string_match>>)
+| Is matching mask where "*" is allowed, case-sensitive (see function <<_string_match,string_match>>)
 | >> `+abc def ==* a*f+` +
   == `+1+` +
   +
@@ -2799,7 +2799,7 @@ from first used to last):
   == `+0+`
 
 | `+!!*+` | 2.9
-| Is NOT wildcard mask where "*" is allowed, case sensitive (see function <<_string_match,string_match>>)
+| Is NOT wildcard mask where "*" is allowed, case-sensitive (see function <<_string_match,string_match>>)
 | >> `+abc def !!* a*f+` +
   == `+0+` +
   +
@@ -2807,7 +2807,7 @@ from first used to last):
   == `+1+`
 
 | `+=*+` | 1.8
-| Is matching mask where "*" is allowed, case insensitive (see function <<_string_match,string_match>>)
+| Is matching mask where "*" is allowed, case-insensitive (see function <<_string_match,string_match>>)
 | >> `+abc def =* A*F+` +
   == `+1+` +
   +
@@ -2815,7 +2815,7 @@ from first used to last):
   == `+0+`
 
 | `+!*+` | 1.8
-| Is NOT wildcard mask where "*" is allowed, case insensitive (see function <<_string_match,string_match>>)
+| Is NOT wildcard mask where "*" is allowed, case-insensitive (see function <<_string_match,string_match>>)
 | >> `+abc def !* A*F+` +
   == `+0+` +
   +
@@ -2823,7 +2823,7 @@ from first used to last):
   == `+1+`
 
 | `+==-+` | 2.9
-| Is included, case sensitive
+| Is included, case-sensitive
 | >> `+abc def ==- bc+` +
   == `+1+` +
   +
@@ -2831,7 +2831,7 @@ from first used to last):
   == `+0+`
 
 | `+!!-+` | 2.9
-| Is NOT included, case sensitive
+| Is NOT included, case-sensitive
 | >> `+abc def !!- bc+` +
   == `+0+` +
   +
@@ -2839,7 +2839,7 @@ from first used to last):
   == `+1+`
 
 | `+=-+` | 2.9
-| Is included, case insensitive
+| Is included, case-insensitive
 | >> `+abc def =- BC+` +
   == `+1+` +
   +
@@ -2847,7 +2847,7 @@ from first used to last):
   == `+0+`
 
 | `+!-+` | 2.9
-| Is NOT included, case insensitive
+| Is NOT included, case-insensitive
 | >> `+abc def !- BC+` +
   == `+0+` +
   +
@@ -4001,7 +4001,7 @@ Arguments:
 
 Return value:
 
-* real potision (in bytes)
+* real position (in bytes)
 
 C example:
 
@@ -6966,7 +6966,7 @@ my_section_delete_option_cb (const void *pointer, void *data,
     /* return WEECHAT_CONFIG_OPTION_UNSET_ERROR; */
 }
 
-/* standard section, user can not add/delete options */
+/* standard section, user cannot add/delete options */
 struct t_config_section *new_section1 =
     weechat_config_new_section (config_file, "section1", 0, 0,
                                 NULL, NULL, NULL,
@@ -8121,7 +8121,7 @@ def config_boolean_inherited(option: str) -> int: ...
 
 # example
 option = weechat.config_get("irc.server.libera.autoconnect")
-autoconect = weechat.config_boolean_inherited(option)
+autoconnect = weechat.config_boolean_inherited(option)
 ----
 
 ==== config_integer
@@ -10009,7 +10009,7 @@ C examples:
 [source,c]
 ----
 /* hook modifier with priority = 2000 */
-/* high priority: called before other modifier calbacks */
+/* high priority: called before other modifier callbacks */
 weechat_hook_modifier ("2000|input_text_display", &modifier_cb, NULL, NULL);
 
 /* hook two signals with priority = 3000 */
@@ -11577,7 +11577,7 @@ C example:
 [source,c]
 ----
 int
-my_line_cb (const void *pointer, void *data, struct t_hasbtable *line)
+my_line_cb (const void *pointer, void *data, struct t_hashtable *line)
 {
     struct t_hashtable *hashtable;
 
@@ -12192,7 +12192,7 @@ List of signals sent by WeeChat and plugins:
 | String: text sent to buffer.
 | Text sent to a user buffer as input (sent only for buffers created with `/buffer add`). +
   If the return code of a callback is _WEECHAT_RC_OK_EAT_, then the string "q"
-  can not be used any more to close the buffer.
+  cannot be used any more to close the buffer.
 
 | weechat | [[hook_signal_buffer_user_closing_xxx]] buffer_user_closing_xxx ^(2)^ | 3.8
 | -
@@ -14407,7 +14407,7 @@ Arguments:
 ** `+==id+`: the name used is the buffer unique identifier (`id`) _(WeeChat ≥ 4.3.0)_
 * _name_: name of buffer, if it is NULL or empty string, the current buffer is
   returned (buffer displayed by current window); if the name starts with
-  `(?i)`, the search is case insensitive _(WeeChat ≥ 1.0)_
+  `(?i)`, the search is case-insensitive _(WeeChat ≥ 1.0)_
 
 Return value:
 
@@ -14658,7 +14658,7 @@ Arguments:
 ** _next_line_id_: next line id in buffer _(WeeChat ≥ 3.8)_
 ** _time_for_each_line_: 1 if time is displayed for each line in buffer (default), otherwise 0
 ** _nicklist_: 1 if nicklist is enabled, otherwise 0
-** _nicklist_case_sensitive_: 1 if nicks are case sensitive, otherwise 0
+** _nicklist_case_sensitive_: 1 if nicks are case-sensitive, otherwise 0
 ** _nicklist_max_length_: max length for a nick
 ** _nicklist_display_groups_: 1 if groups are displayed, otherwise 0
 ** _nicklist_count_: number of nicks and groups in nicklist
@@ -14684,7 +14684,7 @@ Arguments:
 ** _text_search_direction_: direction for search:
 *** 0: backward search (direction: oldest messages/commands)
 *** 1: forward search (direction: newest messages/commands)
-** _text_search_exact_: 1 if text search is case sensitive
+** _text_search_exact_: 1 if text search is case-sensitive
 ** _text_search_regex_: 1 if searching with a regular expression
 ** _text_search_where_:
 *** 0: no search at this moment
@@ -14932,7 +14932,7 @@ Properties:
 | "0" to remove nicklist for buffer, "1" to add nicklist for buffer.
 
 | nicklist_case_sensitive | | "0" or "1"
-| "0" to have case insensitive nicklist, "1" to have case sensitive nicklist.
+| "0" to have case-insensitive nicklist, "1" to have case-sensitive nicklist.
 
 | nicklist_display_groups | | "0" or "1"
 | "0" to hide nicklist groups, "1" to display nicklist groups.
@@ -15189,7 +15189,7 @@ Arguments:
 ** wildcard `+*+` is allowed in name
 
 [NOTE]
-Since version 4.0.0, comparison of buffer names is case sensitive.
+Since version 4.0.0, comparison of buffer names is case-sensitive.
 
 Return value:
 
@@ -19489,7 +19489,7 @@ Arguments:
 * _pointer2_: pointer to second WeeChat/plugin object
 * _name_: variable name or path to a variable name; for arrays, the name can be
   "N|name" where N is the index in array (starting at 0), for example: "2|name"
-* _case_sensitive_: 1 for case sensitive comparison of strings, otherwise 0
+* _case_sensitive_: 1 for case-sensitive comparison of strings, otherwise 0
 
 Return value:
 

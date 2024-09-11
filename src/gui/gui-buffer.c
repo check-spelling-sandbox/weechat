@@ -691,7 +691,7 @@ gui_buffer_apply_properties_cb (void *data,
 }
 
 /*
- * Applies a buffer property defined in a an option "weechat.buffer.xxx".
+ * Applies a buffer property defined in an option "weechat.buffer.xxx".
  */
 
 void
@@ -1320,7 +1320,7 @@ gui_buffer_string_replace_local_var (struct t_gui_buffer *buffer,
  * List is a comma-separated list of buffers, where exclusion is possible with
  * char '!', and "*" means all buffers.
  *
- * Comparison is case sensitive.
+ * Comparison is case-sensitive.
  *
  * Examples:
  *   "*"
@@ -2995,7 +2995,7 @@ gui_buffer_search_by_id (long long id)
  * Searches for a buffer by full name (example: "irc.libera.#weechat").
  *
  * If full_name starts with "(?i)", the search starts after this string
- * and the search is case insensitive.
+ * and the search is case-insensitive.
  */
 
 struct t_gui_buffer *
@@ -3111,7 +3111,7 @@ gui_buffer_search (const char *plugin, const char *name)
  * Searches for a buffer by plugin and partial name.
  *
  * If plugin or name starts with "(?i)", the search starts after this string
- * and the search is case insensitive.
+ * and the search is case-insensitive.
  */
 
 struct t_gui_buffer *
@@ -4066,7 +4066,7 @@ gui_buffer_zoom (struct t_gui_buffer *buffer)
 
 /*
  * Renumbers buffers with consecutive numbers between the range
- * number1 -> number2, sarting with new number "start_number".
+ * number1 -> number2, starting with new number "start_number".
  *
  * If number1 < 1, then renumber starts at first buffer in list (with lowest
  * number).

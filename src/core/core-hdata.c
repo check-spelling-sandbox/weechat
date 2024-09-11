@@ -880,7 +880,7 @@ hdata_string (struct t_hdata *hdata, void *pointer, const char *name)
                 return (*((char ***)(pointer + var->offset)))[index];
             else
             {
-                /* we can not index a static array of strings */
+                /* we cannot index a static array of strings */
                 return NULL;
             }
         }
@@ -998,7 +998,7 @@ hdata_hashtable (struct t_hdata *hdata, void *pointer, const char *name)
 /*
  * Compares a hdata variable of two objects.
  *
- * If case_sensitive == 1, the comparison of strings is case sensitive.
+ * If case_sensitive == 1, the comparison of strings is case-sensitive.
  *
  * Returns:
  *   -1: variable1 < variable2

@@ -114,7 +114,7 @@
 - relay/api: disconnect cleanly when the remote is quitting ([#2168](https://github.com/weechat/weechat/issues/2168))
 - relay: fix websocket permessage-deflate extension when the client doesn't send the max window bits parameters ([#1549](https://github.com/weechat/weechat/issues/1549))
 - relay: fix allocation and reinit of field "client_context_takeover" in websocket deflate structure ([#1549](https://github.com/weechat/weechat/issues/1549))
-- spell: improve error displayed when a word can not be added to the dictionary ([#2144](https://github.com/weechat/weechat/issues/2144))
+- spell: improve error displayed when a word cannot be added to the dictionary ([#2144](https://github.com/weechat/weechat/issues/2144))
 - core: fix completion of command `/item refresh`
 - lua: remote string "Lua" from Lua version in output of `/debug libs`
 - core: fix detection of libgcrypt ≥ 1.11 ([debian #1071960](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1071960))
@@ -210,7 +210,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: display a specific message when the value of option is unchanged after `/set` command
 - core: add variable `${highlight}` in option weechat.look.buffer_time_format ([#2079](https://github.com/weechat/weechat/issues/2079))
 - core: reintroduce help on the variables and operators in `/help eval` ([#2005](https://github.com/weechat/weechat/issues/2005))
-- core: allow case insensitive search of partial buffer name with `(?i)name` in command `/buffer`
+- core: allow case-insensitive search of partial buffer name with `(?i)name` in command `/buffer`
 - core: use function util_strftimeval in evaluation of expression `date:xxx`
 - fset: allow filename starting with "~" in command `/fset -export`
 - irc: store lag in channel and private buffers (local variable "lag"), in addition to the server buffer
@@ -359,7 +359,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - irc: display messages 730/731 (monitored nicks online/offline) even if command `/notify` was not used ([#2049](https://github.com/weechat/weechat/issues/2049))
 - irc: remove trailing "\r\n" in signals "irc_out" and "irc_outtags" when messages are queued
 - irc: fix target buffer of IRC message 337 (whois reply: "is hiding their idle time")
-- irc: revert compute of nick colors to case sensitive way, deprecate again infos "irc_nick_color" and "irc_nick_color_name" ([#194](https://github.com/weechat/weechat/issues/194), [#2032](https://github.com/weechat/weechat/issues/2032))
+- irc: revert compute of nick colors to case-sensitive way, deprecate again infos "irc_nick_color" and "irc_nick_color_name" ([#194](https://github.com/weechat/weechat/issues/194), [#2032](https://github.com/weechat/weechat/issues/2032))
 - relay: close properly connection with the IRC client in case of server disconnection ([#2038](https://github.com/weechat/weechat/issues/2038))
 - ruby: fix use of NULL variable when displaying exception
 
@@ -405,7 +405,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 
 - core: fix crash when a custom bar item name is already used by a default bar item ([#2034](https://github.com/weechat/weechat/issues/2034))
 - core: fix random timeouts when a lot of concurrent processes are launched with hook_process ([#2033](https://github.com/weechat/weechat/issues/2033))
-- irc: revert compute of nick colors to case sensitive way, deprecate again infos "irc_nick_color" and "irc_nick_color_name" ([#194](https://github.com/weechat/weechat/issues/194), [#2032](https://github.com/weechat/weechat/issues/2032))
+- irc: revert compute of nick colors to case-sensitive way, deprecate again infos "irc_nick_color" and "irc_nick_color_name" ([#194](https://github.com/weechat/weechat/issues/194), [#2032](https://github.com/weechat/weechat/issues/2032))
 
 ### Build
 
@@ -437,7 +437,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - fset: allow long type name in type filter
 - irc: add count for all nick modes in output of `/names` ([#97](https://github.com/weechat/weechat/issues/97), [#2020](https://github.com/weechat/weechat/issues/2020))
 - irc: add count and mode filter in command `/names` ([#98](https://github.com/weechat/weechat/issues/98))
-- irc: compute color in case insensitive way, reintroduce infos "irc_nick_color" and "irc_nick_color_name", add support of server name ([#194](https://github.com/weechat/weechat/issues/194))
+- irc: compute color in case-insensitive way, reintroduce infos "irc_nick_color" and "irc_nick_color_name", add support of server name ([#194](https://github.com/weechat/weechat/issues/194))
 - irc: add buffer for /list reply, add options irc.color.list_buffer_line_selected, irc.color.list_buffer_line_selected_bg, irc.look.list_buffer_sort, irc.look.list_buffer_scroll_horizontal, irc.look.new_list_position, irc.look.list_buffer_topic_strip_colors ([#1972](https://github.com/weechat/weechat/issues/1972))
 - irc: display commands 716/717 in private buffer (if present) ([#146](https://github.com/weechat/weechat/issues/146))
 - irc: create default options irc.ctcp.* when file irc.conf is created ([#1974](https://github.com/weechat/weechat/issues/1974))
@@ -638,7 +638,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: display similar command names when a command is unknown ([#1877](https://github.com/weechat/weechat/issues/1877))
 - core: rename option weechat.color.status_name_ssl to weechat.color.status_name_tls ([#1903](https://github.com/weechat/weechat/issues/1903))
 - core: add option weechat.color.status_name_insecure to display buffer name with a specific color when not connected with TLS to the server
-- core, plugins: make many identifiers case sensitive ([#1872](https://github.com/weechat/weechat/issues/1872), [#398](https://github.com/weechat/weechat/issues/398), [bug #32213](https://savannah.nongnu.org/bugs/?32213))
+- core, plugins: make many identifiers case-sensitive ([#1872](https://github.com/weechat/weechat/issues/1872), [#398](https://github.com/weechat/weechat/issues/398), [bug #32213](https://savannah.nongnu.org/bugs/?32213))
 - core: add item "mouse_status" in default status bar, change default color to lightgreen
 - core, trigger: add options weechat.color.chat_status_disabled and weechat.color.chat_status_enabled, remove options trigger.color.trigger and trigger.color.trigger_disabled, add enabled/disabled status color in output of `/filter list` ([#1820](https://github.com/weechat/weechat/issues/1820))
 - core: add completions "filters_names_disabled" and "filters_names_enabled", used in completion of `/filter disable` and `/filter enable`
@@ -706,7 +706,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - irc: fix join of channels in "autojoin" server option on first connection to server if auto reconnection is performed ([#1873](https://github.com/weechat/weechat/issues/1873))
 - irc: update autojoin option with redirected channels when autojoin_dynamic is enabled ([#1898](https://github.com/weechat/weechat/issues/1898))
 - irc: update secure data when server autojoin option contains `${sec.data.xxx}` and option autojoin_dynamic is enabled ([#1934](https://github.com/weechat/weechat/issues/1934))
-- irc: don't switch to buffer of joined channel if it was not manually joined nor present in server autojoin option
+- irc: don't switch to buffer of joined channel if it was neither manually joined nor present in server autojoin option
 - irc: fix target buffer for commands 432/433 (erroneous nickname/nickname already in use) when the nickname looks like a channel
 - irc: display command 437 on server buffer when nickname cannot change while banned on channel ([#88](https://github.com/weechat/weechat/issues/88))
 - irc: add messages 415 (cannot send message to channel) and 742 (mode cannot be set)
@@ -780,7 +780,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: keep terminal title unchanged when option weechat.look.window_title is set to empty value ([#1835](https://github.com/weechat/weechat/issues/1835), [#1836](https://github.com/weechat/weechat/issues/1836))
 - core: fix crash when setting invalid color in option with null value ([#1844](https://github.com/weechat/weechat/issues/1844))
 - api: do not check conditions defined in option weechat.look.hotlist_add_conditions when adding buffer in hotlist with function buffer_set
-- api: fix function strcmp_ignore_chars with case sensitive comparison and wide chars starting with the same byte
+- api: fix function strcmp_ignore_chars with case-sensitive comparison and wide chars starting with the same byte
 - api: send NULL values to config section callbacks in scripting API ([#1843](https://github.com/weechat/weechat/issues/1843))
 - api: fix function string_cut when there are non printable chars in suffix
 - api: do not expect any return value in callbacks "callback_change" and "callback_delete" of function config_new_option (scripting API)
@@ -1215,7 +1215,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: add flag "input_multiline" in buffer ([#984](https://github.com/weechat/weechat/issues/984), [#1063](https://github.com/weechat/weechat/issues/1063))
 - core: add a scalable WeeChat logo (SVG) ([#1454](https://github.com/weechat/weechat/issues/1454), [#1456](https://github.com/weechat/weechat/issues/1456))
 - core: add base 16/32/64 encoding/decoding in evaluation of expressions with `base_encode:base,xxx` and `base_decode:base,xxx`
-- core: add case sensitive wildcard matching comparison operator (`+==*+` and `+!!*+`) and case sensitive/insensitive include comparison operators (`+==-+`, `+!!-+`, `+=-+`, `+!-+`) in evaluation of expressions
+- core: add case-sensitive wildcard matching comparison operator (`+==*+` and `+!!*+`) and case-sensitive/insensitive include comparison operators (`+==-+`, `+!!-+`, `+=-+`, `+!-+`) in evaluation of expressions
 - core: add default key `Alt`+`Shift`+`N` to toggle nicklist bar
 - core: add command line option `--stdout` in weechat-headless binary to log to stdout rather than ~/.weechat/weechat.log ([#1475](https://github.com/weechat/weechat/issues/1475), [#1477](https://github.com/weechat/weechat/issues/1477))
 - core: reload configuration files on SIGHUP ([#1476](https://github.com/weechat/weechat/issues/1476))
@@ -1396,7 +1396,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: fix build on Alpine
 - core: remove file FindTCL.cmake
 - core: display an error on missing dependency in CMake ([#916](https://github.com/weechat/weechat/issues/916), [#956](https://github.com/weechat/weechat/issues/956))
-- debian: disable Javascript plugin on Debian Sid and Ubuntu Eoan
+- debian: disable JavaScript plugin on Debian Sid and Ubuntu Eoan
 - debian: build with Guile 2.2
 - guile: add support of Guile 2.2, disable `/guile eval` ([#1098](https://github.com/weechat/weechat/issues/1098))
 - python: add detection of Python 3.8
@@ -1446,7 +1446,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 ### Build
 
 - core: fix compilation with autotools on FreeBSD 12.0
-- debian: disable Javascript plugin on Debian Buster/Bullseye ([#1374](https://github.com/weechat/weechat/issues/1374))
+- debian: disable JavaScript plugin on Debian Buster/Bullseye ([#1374](https://github.com/weechat/weechat/issues/1374))
 - python: compile with Python 3 by default
 - python: use pkg-config to detect Python ([#1382](https://github.com/weechat/weechat/issues/1382))
 
@@ -1758,7 +1758,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - buflist: add option buflist.look.auto_scroll ([#332](https://github.com/weechat/weechat/issues/332))
 - buflist: add keys `F1` / `F2`, `Alt`+`F1` / `Alt`+`F2` to scroll the buflist bar
 - buflist: display a warning when the script "buffers.pl" is loaded
-- buflist: add support of char "~" in option buflist.look.sort for case insensitive comparison
+- buflist: add support of char "~" in option buflist.look.sort for case-insensitive comparison
 - buflist: add variable `${format_name}` in bar item evaluation and option buflist.format.name ([#1020](https://github.com/weechat/weechat/issues/1020))
 - buflist: add variables `${current_buffer}` and `${merged}` (booleans "0" / "1") in bar item evaluation
 - relay: add option `start` in command `/relay`
@@ -1974,7 +1974,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - irc: evaluate content of server option "addresses"
 - irc: move option irc.network.alternate_nick into servers (irc.server.xxx.nicks_alternate) ([#633](https://github.com/weechat/weechat/issues/633))
 - irc: use current channel and current server channels first in completions "irc_server_channels" and "irc_channels" ([task #12923](https://savannah.nongnu.org/task/?12923), [#260](https://github.com/weechat/weechat/issues/260), [#392](https://github.com/weechat/weechat/issues/392))
-- logger: display system error when the log file can not be written ([#541](https://github.com/weechat/weechat/issues/541))
+- logger: display system error when the log file cannot be written ([#541](https://github.com/weechat/weechat/issues/541))
 - relay: add option relay.irc.backlog_since_last_message ([#347](https://github.com/weechat/weechat/issues/347))
 - script: add option script.scripts.download_timeout
 - script: add completion with languages and extensions, support search by language/extension in `/script search`
@@ -2078,7 +2078,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: add a welcome message on first WeeChat run ([#318](https://github.com/weechat/weechat/issues/318))
 - core: add options weechat.look.word_chars_{highlight|input} ([#55](https://github.com/weechat/weechat/issues/55), [task #9459](https://savannah.nongnu.org/task/?9459))
 - core: remove WeeChat version from config files ([#407](https://github.com/weechat/weechat/issues/407))
-- core: display a warning on startup if the locale can not be set ([#373](https://github.com/weechat/weechat/issues/373))
+- core: display a warning on startup if the locale cannot be set ([#373](https://github.com/weechat/weechat/issues/373))
 - core: allow "*" as plugin name in command `/plugin reload` to reload all plugins with options
 - core: add option `-s` in command `/eval` to split expression before evaluating it (no more split by default) ([#324](https://github.com/weechat/weechat/issues/324))
 - core: add priority in plugins to initialize them in order
@@ -2266,7 +2266,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - core: mute all buffers by default in command `/mute` (replace option -all by -core)
 - api: allow value "-1" for property "hotlist" in function buffer_set (to remove a buffer from hotlist)
 - api: add option "buffer_flush" in function hook_process_hashtable
-- api: add support of case insensitive search and search by buffer full name in function buffer_search ([bug #34318](https://savannah.nongnu.org/bugs/?34318))
+- api: add support of case-insensitive search and search by buffer full name in function buffer_search ([bug #34318](https://savannah.nongnu.org/bugs/?34318))
 - api: add option "detached" in function hook_process_hashtable
 - api: add option "signal" in function hook_set to send a signal to the child process
 - api: add support of nested variables in function string_eval_expression and command `/eval` ([#35](https://github.com/weechat/weechat/issues/35))
@@ -2482,7 +2482,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - irc: fix groups in channel nicklist when reconnecting to a server that supports more nick prefixes than the previously connected server
 - irc: fix auto-switch to channel buffer when doing `/join channel` (without "#")
 - logger: fix memory leaks in backlog
-- logger: replace backslashs in name by logger replacement char under Cygwin ([bug #41207](https://savannah.nongnu.org/bugs/?41207))
+- logger: replace backslashes in name by logger replacement char under Cygwin ([bug #41207](https://savannah.nongnu.org/bugs/?41207))
 - lua: fix crash on calls to callbacks during load of script
 - python: fix load of scripts with Python ≥ 3.3
 - relay: fix memory leak on unload of relay plugin
@@ -2956,7 +2956,7 @@ _If you are upgrading: please see [UPGRADING.md](UPGRADING.md)._
 - irc: add options irc.look.highlight_{server|channel|pv} to customize or disable default nick highlight ([task #11128](https://savannah.nongnu.org/task/?11128))
 - irc: use redirection to get channel modes after update of modes on channel, display output of `/mode #channel`, allow `/mode` without argument (display modes of current channel or user modes on server buffer)
 - irc: add optional server in info "irc_is_channel" (before channel name) ([bug #35124](https://savannah.nongnu.org/bugs/?35124)), add optional server in info_hashtable "irc_message_parse"
-- irc: add case insensitive string comparison based on casemapping of server (rfc1459, strict-rfc1459, ascii) ([bug #34239](https://savannah.nongnu.org/bugs/?34239))
+- irc: add case-insensitive string comparison based on casemapping of server (rfc1459, strict-rfc1459, ascii) ([bug #34239](https://savannah.nongnu.org/bugs/?34239))
 - irc: add option irc.color.mirc_remap to remap mirc colors in messages to WeeChat colors
 - irc: allow URL "irc://" in command `/connect`
 - irc: use extended regex in commands `/ignore` and `/list`

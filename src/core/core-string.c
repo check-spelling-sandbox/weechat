@@ -516,7 +516,7 @@ string_toupper_range (const char *string, int range)
 }
 
 /*
- * Compares two chars (case sensitive).
+ * Compares two chars (case-sensitive).
  *
  * Returns: arithmetic result of subtracting the first UTF-8 char in string2
  * from the first UTF-8 char in string1:
@@ -532,7 +532,7 @@ string_charcmp (const char *string1, const char *string2)
 }
 
 /*
- * Compares two chars (case insensitive).
+ * Compares two chars (case-insensitive).
  *
  * Returns: arithmetic result of subtracting the first UTF-8 char in string2
  * (converted to lowercase) from the first UTF-8 char in string1 (converted
@@ -571,7 +571,7 @@ string_charcasecmp (const char *string1, const char *string2)
 }
 
 /*
- * Compares two chars (case insensitive using a range).
+ * Compares two chars (case-insensitive using a range).
  *
  * The range is the number of chars which can be converted from upper to lower
  * case. For example 26 = all letters of alphabet, 29 = all letters + 3 chars.
@@ -607,7 +607,7 @@ string_charcasecmp_range (const char *string1, const char *string2, int range)
 }
 
 /*
- * Compares two strings (case sensitive).
+ * Compares two strings (case-sensitive).
  *
  * Returns: arithmetic result of subtracting the last compared UTF-8 char in
  * string2 from the last compared UTF-8 char in string1:
@@ -641,7 +641,7 @@ string_strcmp (const char *string1, const char *string2)
 }
 
 /*
- * Compares two strings with max length (case sensitive).
+ * Compares two strings with max length (case-sensitive).
  *
  * Returns: arithmetic result of subtracting the last compared UTF-8 char in
  * string2 from the last compared UTF-8 char in string1:
@@ -680,7 +680,7 @@ string_strncmp (const char *string1, const char *string2, int max)
 }
 
 /*
- * Compares two strings (case insensitive).
+ * Compares two strings (case-insensitive).
  *
  * Returns: arithmetic result of subtracting the last compared UTF-8 char in
  * string2 (converted to lowercase) from the last compared UTF-8 char in
@@ -715,7 +715,7 @@ string_strcasecmp (const char *string1, const char *string2)
 }
 
 /*
- * Compares two strings (case insensitive using a range).
+ * Compares two strings (case-insensitive using a range).
  *
  * The range is the number of chars which can be converted from upper to lower
  * case. For example 26 = all letters of alphabet, 29 = all letters + 3 chars.
@@ -759,7 +759,7 @@ string_strcasecmp_range (const char *string1, const char *string2, int range)
 }
 
 /*
- * Compares two strings with max length (case insensitive).
+ * Compares two strings with max length (case-insensitive).
  *
  * Returns: arithmetic result of subtracting the last compared UTF-8 char in
  * string2 (converted to lowercase) from the last compared UTF-8 char in
@@ -799,7 +799,7 @@ string_strncasecmp (const char *string1, const char *string2, int max)
 }
 
 /*
- * Compares two strings with max length (case insensitive using a range).
+ * Compares two strings with max length (case-insensitive using a range).
  *
  * The range is the number of chars which can be converted from upper to lower
  * case. For example 26 = all letters of alphabet, 29 = all letters + 3 chars.
@@ -1638,7 +1638,7 @@ string_mask_to_regex (const char *mask)
  * Format of flags is: (?eins-eins)string
  * Flags are:
  *   e: POSIX extended regex (REG_EXTENDED)
- *   i: case insensitive (REG_ICASE)
+ *   i: case-insensitive (REG_ICASE)
  *   n: match-any-character operators don't match a newline (REG_NEWLINE)
  *   s: support for substring addressing of matches is not required (REG_NOSUB)
  *
@@ -2978,7 +2978,7 @@ string_split_command (const char *command, char separator)
             buffer[str_idx] = '\0';
             str_idx = -1;
             p = buffer;
-            /* strip white spaces a the beginning of the line */
+            /* strip white spaces at the beginning of the line */
             while (*p == ' ') p++;
             if (p  && p[0])
                 array[arr_idx++] = strdup (p);
@@ -4245,7 +4245,7 @@ string_levenshtein (const char *string1, const char *string2,
  *
  * If allow_escape == 1, the prefix/suffix can be escaped with a backslash
  * (which is then omitted in the result).
- * If allow_escape == 0, the backslash is kept as-is and can not be
+ * If allow_escape == 0, the backslash is kept as-is and cannot be
  * used to escape the prefix/suffix.
  *
  * Argument "list_prefix_no_replace" is a list to prevent replacements in
@@ -4628,8 +4628,8 @@ string_shared_free (const char *string)
  *
  * The string returned can be used with following restrictions:
  *   - changes are allowed in the string, between the first char and the final
- *     '\0', which must not be removed nor moved,
- *   - no other '\0' must be added in the string,
+ *     '\0', which must remain at its current location,
+ *   - no other '\0' may be added in the string,
  *   - content can be added in the string with function string_dyn_concat(),
  *   - string can be freed with function string_dyn_free() (do NEVER call
  *     directly free() on the string).
